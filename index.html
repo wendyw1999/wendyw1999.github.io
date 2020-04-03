@@ -12,27 +12,20 @@
     <title>wechat demo</title>
 </head>
 <body>
-   
-    <!-- <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        <svg class="bi bi-exclamation-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M16 8A8 8 0 110 8a8 8 0 0116 0zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"/>
-          </svg>
-        
-      </div> -->
-      <div class="alert alert-danger alert-dismissible">
+
+      <!-- <div class="alert alert-danger alert-dismissible">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <svg class="bi bi-exclamation-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M16 8A8 8 0 110 8a8 8 0 0116 0zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"/>
           </svg> IOS/安卓系统客户端已更新，请及时更新版本以查看企业项目
-      </div>
+      </div> -->
     <div class = "home">
+        <div class = "text-center"><img src="./logo.jpg" alt="" class = "rounded"></div>
         
-        <img src="./bilibili.png" alt="" class = "img-thumbnail">
         <div class = "text">
-            <h5>箭牌服务公众号</h5>
+            <h2>箭牌卫浴</h2>
             
-            <p class="font-weight-light" id = "light">Updated 4 days ago</p>
+            <p class="font-weight-light" id = "light">since 2010</p>
 
         </div>
         <br>
@@ -40,16 +33,63 @@
 
     </div>
     <div class = "container" id = "buttons">
-        <div class = "row">
-        <button class ="btn btn-primary" id = "open">Open in Client</button>
+        <h2>欢迎！</h2>
+        <div class="row">
+            <div class="col-lg-6">
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    +86
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">+86 中国大陆</a>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">+1 美国</a>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">+2 英国</a>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+                </div>
+                <input placeholder = "手机号" type="text" class="form-control" aria-label="Text input with dropdown button">
+              </div>
+            </div>
+            <br>
+            
+            <div class="col-lg-6">
+              <div class="input-group">
+                <input type="text" class="form-control"  placeholder = "验证码" aria-label="Text input with dropdown button">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-secondary" aria-haspopup="true" aria-expanded="false">
+                    Send Code
+                  </button>
+                  
+                </div>
+              </div>
+            </div>
+
+          </div>
+        <!-- <div class = "row"> -->
+        <!-- <button class ="btn btn-primary" id = "open">Open in Client</button>
         <br>
         <br>
-        <button class = "btn btn-light" id = "link"><a href = "https://www.google.com">Project</a> </button>
+        <button class = "btn btn-light" id = "link"><a href = "https://www.google.com">Project</a> </button> -->
+    <!-- </div> -->
+    <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> 记住我
+        </label>
+      </div>
+      <button id = "submit" class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+      <p id = "company" class="mt-5 mb-3 text-muted">© 2017-2018</p>
     </div>
-    </div>
+    
     <div class = "bottom">
         <button class = "btn btn-link" aria-label="Left Align">
-            <p class = "font-weight-light">Add to Home Screen<span class = "glyphicon glyphicon-chevron-right
+            
+            
+        
+            <p id = "bottom-text">访客进入<span class = "glyphicon glyphicon-chevron-right
                 " aria-hidden = "true"></span></p>
 
         </button>
