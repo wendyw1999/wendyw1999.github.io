@@ -72,7 +72,9 @@ img {
     height:auto;
     
 }
-
+/* .col-lg-6 {
+    
+} */
 #submit {
     color:white;
     background-color:#E95646;
@@ -113,6 +115,7 @@ img {
     right:0;
     font-weight:100;
 }
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
 #bottom-text {
     color:#E95646;
