@@ -7,13 +7,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="./wechat.css">
 
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400&display=swap" rel="stylesheet">
 
-    <title>wechat demo</title>
+    <title>登陆</title>
 </head>
 <body>
 
@@ -23,7 +24,10 @@
             <path fill-rule="evenodd" d="M16 8A8 8 0 110 8a8 8 0 0116 0zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"/>
           </svg> IOS/安卓系统客户端已更新，请及时更新版本以查看企业项目
       </div> -->
+      
+    
     <div class = "home">
+        
         <div class = "text-center"><img src="./logo.jpg" alt="" class = "rounded"></div>
         
         <div class = "text">
@@ -36,66 +40,46 @@
 
 
     </div>
-    <div class = "container" id = "buttons">
-        
-
-        <div class="row">
-            <div class="col-lg-6">
-              <div class="input-group">
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    +86
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">+86 中国大陆</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">+1 美国</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">+2 英国</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                  </div>
-                </div>
-                <input placeholder = "手机号" type="text" class="form-control" aria-label="Text input with dropdown button">
-              </div>
-            </div>
-            <br>
-            
-            <div class="col-lg-6">
-              <div class="input-group">
-                <input type="text" class="form-control"  placeholder = "验证码" aria-label="Text input with dropdown button">
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-secondary" aria-haspopup="true" aria-expanded="false">
-                    Send Code
-                  </button>
-                  
-                </div>
-              </div>
-            </div>
-
-          </div>
-        <!-- <div class = "row"> -->
-        <!-- <button class ="btn btn-primary" id = "open">Open in Client</button>
-        <br>
-        <br>
-        <button class = "btn btn-light" id = "link"><a href = "https://www.google.com">Project</a> </button> -->
-    <!-- </div> -->
-    <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> 记住我
-        </label>
-      </div>
-      <button id = "submit" class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
-      <p id = "company" class="mt-5 mb-3 text-muted">© 2017-2018</p>
-    </div>
     
+    
+        <form class = "needs-validation" id= "buttons">
+            
+            <div class="md-form input-group mb-3">
+                
+                <!-- <div class="input-group-prepend">
+                    
+                  <span class="input-group-text md-addon" id="material-addon1">+86</span>
+                </div> -->
+
+                <input type="number" class="form-control" placeholder="请填写手机号" aria-label="Username" aria-describedby="material-addon1">
+              </div>
+            <div class="md-form input-group mb-3">
+                <input type="text" class="form-control" placeholder="请填写验证码" aria-label="verificationCode"
+                  aria-describedby="MaterialButton-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-md btn-primary m-0 px-3" type="button" id="MaterialButton-addon2">获取验证码</button>
+                </div>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                <label id = "checkRead" class="custom-control-label" for="defaultUnchecked">已阅读并同意
+                    <a href="https://www.baidu.com">《箭牌卫浴用户服务协议》《用户注册隐私政策》</a></label>
+            </div>
+            
+            <br>
+                <button id = "submit" type="submit" class="btn btn-primary btn-block">注册 / 登陆</button>
+            
+            
+        </form>
+       
     <div class = "bottom">
         <button class = "btn btn-link" aria-label="Left Align">
             
             
 
-            <p id = "bottom-text">访客进入<span class = "glyphicon glyphicon-menu-right
-                " aria-hidden = "true"></span></p>
+            <p id = "bottom-text"><a href="https://www.baidu.com">访客进入 <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L10.293 8 4.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
+              </svg> </a></p>
 
         </button>
     </div>
