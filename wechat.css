@@ -1,16 +1,22 @@
 
 /* pink color:#E95646
-white color: F5F5F5 */
+white color: F5F5F5 
+grey 	rgb(120, 120, 120)*/
 
 /* font - background */
 html, body {
     min-height:100%;
-    background-color:rgb(245,245,245);
+    /* background-color:rgb(245,245,245); */
+    
 }
 p {
     font-size:1em;
 }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:rgb(120, 120, 120);
+  }
 body {
+    color:	rgb(120, 120, 120);
     font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei';
     
     /* background-repeat:no-repeat;
@@ -30,11 +36,12 @@ body {
 
 /* alert box */
 
-.home {
-    background-image:linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
+.header {
+    /* color:white; */
+    /* background-image:linear-gradient(to left, #33ccff 0%, #ff99cc 100%); */
 
 
-    padding-top:10%;
+    padding-top:15%;
     margin-top:1px;
     
     bottom:0;
@@ -48,7 +55,7 @@ body {
 }
 
 img {
-    width:70px;
+    width:100px;
     height:auto;
 }
 .rounded {
@@ -95,7 +102,7 @@ img {
     height:40px;
 } */
 #checkRead {
-    font-size:.8em;
+    font-size:.6em;
 }
 .bottom {
     /* margin-bottom:10%; */
@@ -119,6 +126,3 @@ img {
 /* a {
     color:#E95646;
 } */
-.button {
-    color:white;
-}
