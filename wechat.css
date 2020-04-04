@@ -1,14 +1,21 @@
-
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot');
+    src: url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.woff') format('woff'), url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  }
 /* pink color:#E95646
 white color: F5F5F5 
 grey 	rgb(120, 120, 120)*/
 
 /* font - background */
+.input-group-text {
+    width:35px;
+}
 html, body {
     min-height:100%;
 
     /* background-color:rgb(245,245,245); */
-    
+  
 }
 p {
     font-size:1em;
