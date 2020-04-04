@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale = 1">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet">
+<script type="text/javascript" src="./script.js"></script>
+<link rel="stylesheet" href="./wechat.css">
+<script src="https://kit.fontawesome.com/84033bb3c1.js" crossorigin="anonymous"></script>
+
+    <title>Profile</title>
+</head>
+<body>
+    <div class = "background-reduced">
+        
+    </div>
+    
+    <section class = "container" id = "profile">
+        <div class = "row">
+            <div class = "col text-left" id = "username">
+                <br>
+                <p>小顽皮爱洗澡</p>
+                <p class = "font-weight-light">ID:3847UTX</p>
+                
+                <p class ="font-weight-light"><i class="fas fa-venus"></i>女,
+                    <i class="fas fa-map-marker-alt"></i> 安徽，合肥</p>
+                <!-- <button class="btn btn-outline-primary"><i class="far fa-edit"></i>修改个人信息</button> -->
+                
+            </div>
+            <!-- <div class = "col"><img src="./avatar.png" alt="" class = "avatar"></div> -->
+            <div class="col col-sm-1">
+                <div class="item">
+                    <a href="#">
+                      <span id = "badge" class="badge badge-primary"><i class="fas fa-cog"></i></span>
+                        <img class = "avatar" src="./avatar.png"  alt="" />
+                  </a>
+              </div>
+          </div>
+
+        </div>
+        <hr>
+        
+        <button class="btn btn-outline-primary btn-block"><i class="far fa-edit"></i> 修改地址</button>
+        <br>
+        <button class="btn btn-outline-primary btn-block"><i class="fas fa-history"></i> 维修记录</button>
+        <br>
+        <button class="btn btn-outline-primary btn-block"><i class="fas fa-shopping-bag"></i> 我的箭牌产品</button>
+
+
+
+        <!-- <section class = "container" id = "address">
+           <div class = "row">
+               <div class = "col">
+                <p class = "font-weight-bold">我的地址</p>
+                <p class = "font-weight-light">上海市浦东区厦门大厦2001</p>
+                    
+               </div>
+               <div class = "col">
+                <button class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i>管理</button>
+
+               </div>
+               
+            
+
+           </div>
+            
+
+            
+    
+        </section>
+        <hr>
+        <section class = "container" id = "history">
+            <div class = "row">
+
+                 <p class = "font-weight-bold">维修记录</p>
+                 <button class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i>查看</button>
+
+                 <p class = "font-weight-light">维修状态：正在处理中</p>
+                
+            </div>
+             
+ 
+             
+     
+         </section>
+
+        
+    </section> -->
+    
+    
+    <div class = "navigation">
+        <div class = "row">
+            
+            
+              <div  onclick="location.href = './fix.html';"class="col align-self-center">
+                <i class="fas fa-wrench"></i>
+                <p>在线报修</p>
+              </div>
+              
+              <div  onclick="location.href = './callcenter.html';"class="col">
+                <i class="fas fa-headset"></i>
+                <p>在线客服</p>
+              </div>
+              <div class="col" id = "active">
+                <i class="fas fa-user"></i>  
+                              <p>个人中心</p>
+              </div>
+        
+    </div>
+    
+    
+</body>
+</html>
