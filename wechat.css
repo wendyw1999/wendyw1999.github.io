@@ -176,7 +176,7 @@ img {
 
 }
 .navigation #active {
-    color:blue;
+    color:#0275d8;
     
     
 }
@@ -239,11 +239,32 @@ img {
 }
 
 #toFixed img {
-    height:80px;
+    height:60px;
     border-radius:10px;
     width:auto;
 }
 #toFixed p {
     text-align:center;
     font-size:.7em;
+}
+
+input #date::-ms-expand {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    display: none;
+}
+
+#DatePicker select {
+    max-width:40%;
+}
+
+#fixOrInstall {
+    bottom:0;
+    right:0;
+    left:0;
+    padding-bottom:30%;
+    position:relative;
+    margin:auto;
 }
