@@ -36,8 +36,9 @@ p {
     position:white;
     
 }
-.background-reduced {
+.background-header {
     background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
+    min-height:80px;
     
 }
 
@@ -46,7 +47,7 @@ p {
     background:white;
     margin-top:10px;
 }
-body {
+body .background {
     background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
 
     /* color:	rgb(120, 120, 120); */
@@ -227,8 +228,8 @@ img {
     /* background:white; */
     /* background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%); */
 
-    margin-top:20px;
-    position:absolute;
+    padding-top:20px;
+    position:relative;
     overflow:scroll;
     -webkit-overflow-scrolling:touch;
 }
