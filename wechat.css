@@ -18,6 +18,7 @@ div .container {
 }
 html, body {
     min-height:100%;
+    
 
     /* background-color:rgb(245,245,245); */
   
@@ -30,10 +31,12 @@ p {
   }
 
   
-.background {
-    background-image: linear-gradient( 135deg, white 10%, white 100%);
-
-    position:white;
+main,#profile {
+        /* background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%); */
+    background-color: #F5F5F5;
+    position:relative;
+    overflow:scroll;
+    -webkit-overflow-scrolling:touch;
     
 }
 .background-header {
@@ -48,7 +51,7 @@ p {
     margin-top:10px;
 }
 body .background {
-    background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
+    /* background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%); */
 
     /* color:	rgb(120, 120, 120); */
     font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei';
