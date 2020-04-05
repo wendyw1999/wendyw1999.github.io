@@ -40,21 +40,16 @@ p {
     background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
     
 }
-#profile {
-    background:white;
-    margin-top:20px;
-    position:absolute;
-    overflow:scroll;
-    -webkit-overflow-scrolling:touch;
-}
+
+
 #help {
     background:white;
     margin-top:10px;
 }
 body {
-    /* background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%); */
+    background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
 
-    color:	rgb(120, 120, 120);
+    /* color:	rgb(120, 120, 120); */
     font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei';
     
     /* background-repeat:no-repeat;
@@ -164,6 +159,7 @@ img {
 /* a {
     color:#E95646;
 } */
+
 .navigation {
     border-top:0.1px solid grey;
     left:0;
@@ -188,6 +184,10 @@ img {
 .navigation p {
     font-size:.5em;
 }
+.card-body {
+    text-align:center;
+    align-items:center;
+}
 .navigation .col .span {
     vertical-align:middle;
 
@@ -196,6 +196,48 @@ img {
     color:#0275d8;
     
     
+}
+
+.btn-light {
+    background-color:white !important;
+}
+
+.profile-function .col {
+    vertical-align:middle;
+    font-size:1.2em;
+}
+/* .input[type="buttton"] .profile-function:active{
+    background-color:#F5F5F5;
+
+  } */
+
+#profile-card {
+    top:35px;
+    
+}
+
+.float-profile-image {
+    left:0;
+    right:0;
+    text-align:center;
+    position:absolute;
+    top:5px;
+}
+#profile {
+    /* background:white; */
+    /* background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%); */
+
+    margin-top:20px;
+    position:absolute;
+    overflow:scroll;
+    -webkit-overflow-scrolling:touch;
+}
+
+
+.profile-title {
+    padding-top:20px;
+    margin-top:5px;
+    text-align:center;
 }
 #profile {
     padding-top:6%;
@@ -216,7 +258,6 @@ img {
     
 }
 .profile-functions:active {
-    background-color:#F5F5F5;
 }
 
 .linebreak {
@@ -234,10 +275,6 @@ img {
     vertical-align:middle;
     width:90px;
     height:90px;
-
-}
-
-#profile #address {
 
 }
 .item {
