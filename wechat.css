@@ -33,12 +33,19 @@ p {
 }
 .background-reduced {
     background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
-    height:70px;
-    width:auto;
+    
+}
+#profile {
+    background:white;
+    margin-top:70px;
+    position:relative;
+}
+#help {
+    background:white;
+    margin-top:10px;
 }
 body {
-    
-    
+    background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
 
     color:	rgb(120, 120, 120);
     font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei';
@@ -163,7 +170,7 @@ img {
 
 .navigation .col {
     font-size:1.5em;
-    background-color:white;
+    /* background-color:white; */
     color:rgb(120, 120, 120);
     min-width:80dp;
     max-width:168dp;
@@ -186,8 +193,25 @@ img {
 #profile {
     padding-top:6%;
     
-    position:fixed;
+    position:relative;
 }
+
+#profile-account {
+    padding:10px;
+
+}
+
+.profile-functions {
+    font-size:1.2em;
+    border-bottom:.02px solid grey;
+    padding:15px;
+    
+    
+}
+.profile-functions:active {
+    background-color:#F5F5F5;
+}
+
 .linebreak {
     background-color:grey;
 }
@@ -229,7 +253,7 @@ img {
 
 .text-left {
     
-    padding-left:30px;
+    padding-left:10px;
 }
 
 .text-left p {
@@ -270,4 +294,9 @@ input #date::-ms-expand {
     padding-bottom:30%;
     position:relative;
     margin:auto;
+}
+
+/* colors */
+.edit {
+    color:#4285F4
 }

@@ -68,7 +68,7 @@
     <div class ="container" id = "DatePicker">
         <h5>3.要求时间</h5>
              <div class = "md-form input-group mb-3">
-                <input class = "form-control" id="date" type="date">
+                <input class = "form-control" id="date" min="2019-04-02" type="date">
                 <select id = "selectTime" name = "dropdown" class="form-control" placeholder = "选择日期">
                     <option value = "null">选择时间</option>
                     <option value = 8>8:00</option>
@@ -84,11 +84,14 @@
                     <option value = 18>18:00</option>
                   </select>
              </div>
+             
             
         
         
         
     </div>
+   
+    </script>
     <script>
         $("#DatePicker").hide();
         $('select[name="dropdown"]').change(function(){
