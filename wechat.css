@@ -22,3 +22,6 @@ a {
 img {
     height:100px;
 }
+nav {
+    border-bottom: 1px solid #f2f3f3;
+}
