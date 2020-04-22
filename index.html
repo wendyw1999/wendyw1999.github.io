@@ -16,130 +16,61 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400&display=swap" rel="stylesheet">
 
-    <title>登录</title>
+    <title>我的主页</title>
 </head>
 <body>
-
-     
-  <div class = "background-header"></div>
-    <main class = "container">
+  <nav class="nav nav-light">
+    <a class="nav-link active" href="#">Homepage</a>
+    <!-- <a class="nav-link" href="#">Projects</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+  </nav>
+  <br>
+  <div class = "container">
+  <div class = "row">
+    <div class = "col text-left">
+      <img src="./profile.jpg" class = "rounded-circle" alt="">
+      <h5><b>Caiwei Wang</b></h5>
+      <p>Third Year Student at <i><a href="https://datascience.ucsd.edu"> Halıcıoğlu Data Science Institute</a></i>
+      </p>
+      <p>Currently Working as a Project Manager for International Family Union</p>
       
-    <div class = "header">
-        
-        
-        
-        
-        <!-- <div class = "text-center"><img src="./logo.jpg" alt="" class = "rounded"></div> -->
-        
-        <div class = "text-center"><img src="./arrow.jpg" alt="" class = "rounded"></div>
-        
-        <!-- <div class = "text-center"><img src="./avatar.png" alt="" class = "avatar"></div> -->
-        
-
-        <!-- <div class = "text">
-
-            <h2>箭牌卫浴</h2>
-            
-            
-            <p class="font-weight-light" id = "light">Arrow</p>
-
-        </div> -->
-        
-
-
+      <div class = "hyperlinks">
+        <p><a href="https://www.ifu-china.com/#/"><i class="fas fa-map-marker"></i> International Family Union</a></p>
+        <p><a href="https://www.ucsd.edu"><i class="fas fa-map-marker"></i> University of California, San Diego</a></p>
+        <p><a href="https://www.github.com/wendyw1999"><i class="fab fa-github"></i> Github</a></p>
+        <p><a href="mailto:xiaocaowendy@163.com"><i class="fas fa-envelope"></i> Email</a></p>
+      </div>
+      
     </div>
+    <div class = "col">
+      <h5><b>Welcome to Caiwei Wang's Homepage!</b></h5>
+      <p>I am a student at UCSD studying in  Halıcıoğlu Data Science Institute. I will graduate with a B.S. degree in Data Science
+        in March, 2021. 
+
+      </p>
+      <div>
+        <p><b>Interests</b></p>
+        <p>I am interested in data mining and machine learning</p>
     
-      
+      </div>
+      <div>
+        <p><b>My Projects</b></p>
         
-        <form class = "needs-validation" id= "buttons">
-            
-            <div class="md-form input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text md-addon" id="addon-wrapping">
-                        <i class="fas fa-mobile-alt grey-text"></i>  
-                    </span>
-                  </div>
-                
-                             
-                <input id = "phone" type="number" pattern = "[0-9]{11}" title="11 integer" 
-                class="form-control" placeholder = "请输入手机号" required />
-
-              </div>
-            </div>
-                
-
-                <div class="md-form input-group mb-3">
-                    
-                    <div class="input-group-prepend">
-                        <span class="input-group-text md-addon" id="addon-wrapping">
-                            <i class="far fa-comment grey-text"></i>                      </div>
-                    <input type="text" class="form-control"  aria-label="Recipient's username"
-                       id = "verificationCode" placeHolder = "请输入验证码">
+        <ul>
+          <li><a href = "https://github.com/wendyw1999/snapchat_political_ads">Snapchat Political Ads Data Analysis + Prediction Model</a></li>
+          <li><a href = 'https://github.com/wendyw1999/Olympics_SQL_project'>Olympic Data SQL Database Building</a></li>
+          <li><a href = "https://wendyw1999.github.io/us-prison/">U.S. Prison Data Analysis + Data Viz</a></li>
+          <li><a href = 'https://github.com/wendyw1999/wxbotForGroupChat'>Wechat Group Chat bot</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
     
 
-                    <div class="input-group-append">
-                      <button class="btn btn-md btn-primary m-0 px-3" type="button" id="send">发送验证码</button>
-                    </div>
-                  </div>
-              
-              
-              
-              <!-- <div class = "container">
-                <div class="row justify-content-md-center">
 
-                    <div class = "col-1">
-                        <i class="fas fa-comment"></i>
     
-                    </div>
-                    <div class = "col-1">
-                        <input id = "verificationCode" type="number" class="form-control" autofocus
-                        placeholder="" aria-label="verificationCode"
-                          aria-describedby="MaterialButton-addon2" required />
-                    </div>
-                    <div class = "col-1">
-                        <button class="btn btn-md btn-primary mb-0" type="button" id="send">请填写验证码</button>
-                    </div>
-              </div> -->
-              
-                <!-- <div class="md-form input-group"> -->
-                    <!-- <div class="input-group-prepend">
-                        <i class="far fa-comment prefix"></i>
-    
-                      </div> -->
-    
-                    
-                      
-                    <!-- <div class="input-group-append">
-                      <button class="btn btn-md btn-primary m-0 px-3" type="button" id="send">获取验证码</button>
-                    </div> -->
-                  <!-- </div> -->
-              
-              
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked" required>
-                <label id = "checkRead" class="custom-control-label" for="defaultUnchecked" >已阅读并同意
-                    <a href="https://www.baidu.com">《箭牌卫浴用户服务协议》《用户注册隐私政策》</a></label>
-            </div>
-            
-            <br>
-                <button id = "submit" type="submit" class="btn btn-primary btn-block" 
-                onclick="location.href = './profile.html';">注册 / 登录</button>
-            
-            
-        </form>
-      </main>  
-       
-    <!-- <div class = "bottom">
-        <button class = "btn btn-link" aria-label="Left Align">
-            
-            
-
-            <p id = "bottom-text"><a href="https://www.baidu.com">访客进入 <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L10.293 8 4.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
-              </svg> </a></p>
-
-        </button>
-    </div> -->
 
 
     
