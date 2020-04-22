@@ -19,19 +19,63 @@
     <title>我的主页</title>
 </head>
 <body>
-  <nav class="nav nav-light">
-    <a class="nav-link active" href="#"><b>Homepage</b></a>
-    <!-- <a class="nav-link" href="#">Projects</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
-  </nav>
+  <!-- <nav class="nav nav-light">
+    <a class="nav-link nav-active" href="./index.html"><b>Homepage</b></a>
+    <a class="nav-link" href="./olympics.html">Projects</a>
+   
+  </nav> -->
+  <header>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark blue scrolling-navbar">
+      <a class="navbar-brand" href="#"><strong>CW</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">Homepage <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./projects.html">Projects</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Opinions</a>
+          </li> -->
+        </ul>
+        <!-- <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul> -->
+      </div>
+    </nav>
+  
+  </header>
   
   <br>
+  <br>
+  <br>
+  <br>
+
   <div class = "container">
   <div class = "row">
-    <div class = "col text-left">
-      <img src="./profile.jpg" class = "rounded-circle" alt="">
-      <h3><b>Caiwei Wang</b></h3>
+    <div class = "col-sm-4 text-left">
+      <div class = "text-center">
+        <img src="./profile.jpg" class = "rounded-circle avatar" alt="">
+        <h3><b>Caiwei Wang</b></h3>
+
+      </div>
       <p>Third Year Student at <i><a href="https://datascience.ucsd.edu"> Halıcıoğlu Data Science Institute</a></i>
       </p>
       <p>Currently Working as a Project Manager for International Family Union</p>
@@ -40,29 +84,44 @@
         <p><a href="https://www.ifu-china.com/#/"><i class="fas fa-map-marker"></i> International Family Union</a></p>
         <p><a href="https://www.ucsd.edu"><i class="fas fa-map-marker"></i> University of California, San Diego</a></p>
         <p><a href="https://www.github.com/wendyw1999"><i class="fab fa-github"></i> Github</a></p>
+       
         <p><a href="mailto:xiaocaowendy@163.com"><i class="fas fa-envelope"></i> Email</a></p>
+        <p><a href="https://www.linkedin.com/in/caiwei-wang/"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
       </div>
       
     </div>
-    <div class = "col">
+    <div class = "col-sm-8">
       <h2><b>Welcome to Caiwei Wang's Homepage!</b></h2>
       <p>I am a student at UCSD studying in  Halıcıoğlu Data Science Institute. I will graduate with a B.S. degree in Data Science
         in March, 2021. 
 
       </p>
       <div>
-        <h5><b>Research Interests</b></h5>
-        <p>I am interested in Machine Learning in sound signal classification.</p>
+        <h5><b>About Me</b></h5>
+        <p>
+          <ul>
+            <li>
+              Passionate about data visualizationa and data analysis. 
+            </li>
+            <li>          Fluent in language/tools such as Java, Python, R, Tableau. </li>
+            <li>Have taken courses in Data Mining, Machine Learning, Database Management, Statistics.
+            </li>
+            <li>          Always seeking for ideas for projects!
+            </li>
+          </ul>
+           
+          
+       </p>
     
       </div>
       <div>
-        <h5><b>My Projects</b></h5>
+        <h5><b><a href="./projects.html">My Projects</a></b></h5>
         
         <ul>
           <li><a href = "https://github.com/wendyw1999/snapchat_political_ads">Snapchat Political Ads Data Analysis + Prediction Model</a></li>
-          <li><a href = 'https://github.com/wendyw1999/Olympics_SQL_project'>Olympic Data SQL Database Building</a></li>
-          <li><a href = "https://wendyw1999.github.io/us-prison/">U.S. Prison Data Analysis + Data Viz</a></li>
-          <li><a href = 'https://github.com/wendyw1999/wxbotForGroupChat'>Wechat Group Chat bot</a></li>
+          <li><a href = './olympics.html'>Olympic Data SQL Database Building</a></li>
+          <li><a href = "./prison.html">U.S. Prison Data Analysis + Data Viz</a></li>
+          <li><a href = './wxbot.html'>Wechat Group Chat bot</a></li>
         </ul>
       </div>
     </div>

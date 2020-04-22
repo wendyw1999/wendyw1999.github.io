@@ -17,11 +17,67 @@ body {
 
 a {
     color: #494e52;
-}
 
+}
+a:hover {
+    text-decoration:underline
+}
+.avatar {
+    padding: 5px;
+    border: 1px solid #f2f3f3;
+    height:150px;
+}
 img {
-    height:100px;
+   
 }
 nav {
-    border-bottom: 1px solid #f2f3f3;
+    border-bottom: 2px solid #f2f3f3;
+}
+.navbar {
+    position:fixed !important;
+}
+.olympics {
+    margin-left:40px;
+    margin-right:40px;
+}
+
+#final_schema {
+    height:1000px;
+
+}
+.title {
+    border-bottom: 2px solid #f2f3f3;
+}
+.olympics h1 {
+    color:#4285F4;
+    font-weight:bold;
+    
+}
+
+.olympics h2{
+    font-weight:bold;
+    
+}
+
+code {
+    background-image: #f2f3f3;
+    border-radius:20px;
+}
+.olympics h3 {
+    font-weight:bold;
+    padding-top:20px;
+    border-top:2px solid #f2f3f3;
+}
+
+.navabar {
+    font-size:21px !important;
+}
+
+.prison-img {
+    margin:0 auto;
+    align-items:center;
+}
+
+.prison-img img {
+    height:200px;
 }

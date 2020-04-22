@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale = 1">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet">
+<script type="text/javascript" src="./script.js"></script>
+<link rel="stylesheet" href="./wechat.css">
+<script src="https://kit.fontawesome.com/84033bb3c1.js" crossorigin="anonymous"></script>
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400&display=swap" rel="stylesheet">
+
+    <title>Olympics Project</title>
+</head>
+<body>
+    
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark blue scrolling-navbar">
+        <a class="navbar-brand" href="#"><strong>CW</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Homepage</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link active" href="./projects.html">Projects<span class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Opinions</a>
+            </li> -->
+          </ul>
+          <!-- <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul> -->
+        </div>
+      </nav>
+      
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <main class = "olympics">
+    <h1 class = "title" id="120-years-of-olympics-games">120 years of Olympics Games</h1>
+
+<p><i>Halıcıoğlu Data Science Institute</i> Caiwei Wang, Jou-Ying Lee</p>
+<p>Project Datasets:
+    <br>
+<a href="https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results">https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results</a>
+<br>
+<a href="https://www.kaggle.com/the-guardian/olympic-games#summer.csv">https://www.kaggle.com/the-guardian/olympic-games#summer.csv</a></p>
+<h2 id="final-schema-diagram">Final Schema Diagram</h2>
+<p><img id = "final_schema" src="final_schema.png" alt="final_schema"></p>
+<h3 id="description-of-cleaning-preprocessing-">Description of Cleaning/ Preprocessing:</h3>
+<p>[P.S. Please see at the end of “Data Cleaning” processes out team’s discussion of information loss]</p>
+<h3 id="data-importing-">Data importing:</h3>
+<pre><code class="lang-sql">Created five tables: 
+athlete_events, noc_regions, summer, winter, dictionary.
+</code></pre>
+<p>Used “copy table_name from source” method to import csv files into these tables.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">Create</span> <span class="hljs-keyword">table</span>  athlete_events(
+<span class="hljs-keyword">Id</span> <span class="hljs-built_in">serial</span>,
+<span class="hljs-keyword">Name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">200</span>),
+Sex <span class="hljs-built_in">char</span>,
+Height <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),
+Weight <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),
+Team <span class="hljs-built_in">varchar</span>(<span class="hljs-number">200</span>),
+Games <span class="hljs-built_in">varchar</span> (<span class="hljs-number">50</span>),
+<span class="hljs-keyword">Year</span> <span class="hljs-built_in">int</span>,
+City <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>),
+Sport <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>),
+<span class="hljs-keyword">Event</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">250</span>),
+Medal <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>));
+
+Copy athlete_events
+From ‘path/athlete_events.csv’ CSV encoding = ‘utf-8’ delimiter ‘,’ header;
+</code></pre>
+<h3 id="data-cleaning-">Data Cleaning:</h3>
+<ul>
+<li>Summer, Winter tables cleaning
+Firstly added a season column in summer, winter tables, and then merged them into one table called summer_winter with the season column denoting where each row came from.<pre><code class="lang-sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> summer
+           <span class="hljs-keyword">add</span> <span class="hljs-keyword">column</span> season <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">default</span> <span class="hljs-string">'Summer'</span>;
+<span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> winter
+           <span class="hljs-keyword">add</span> <span class="hljs-keyword">column</span> season <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">default</span> <span class="hljs-string">'Winter'</span>;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> summer_winter <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> summer <span class="hljs-keyword">union</span> all <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> winter;
+<span class="hljs-keyword">Alter</span> <span class="hljs-keyword">table</span> summer_winter
+<span class="hljs-keyword">Add</span> <span class="hljs-keyword">column</span> <span class="hljs-keyword">id</span> <span class="hljs-built_in">serial</span> primary <span class="hljs-keyword">key</span>;
+</code></pre>
+</li>
+</ul>
+<p>We also cleaned the ‘Athlete’ column in  summer_winter table column into lastname, firstname, and middlename by splitting on the delimiter “,” </p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">materialized</span> <span class="hljs-keyword">view</span> temp_name <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span>
+                    <span class="hljs-keyword">id</span>,
+                    (regexp_split_to_array(<span class="hljs-string">"athlete"</span>,E<span class="hljs-string">', '</span>))[<span class="hljs-number">1</span>] <span class="hljs-keyword">as</span> <span class="hljs-string">"lastname"</span>,
+                    (regexp_split_to_array(<span class="hljs-string">"athlete"</span>,E<span class="hljs-string">', '</span>))[<span class="hljs-number">2</span>] <span class="hljs-keyword">as</span> <span class="hljs-string">"firstname"</span>
+                    <span class="hljs-keyword">from</span> summer_winter_temp_table
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">materialized</span> <span class="hljs-keyword">view</span> temp_name_6 <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> <span class="hljs-keyword">id</span>,
+                                                            <span class="hljs-keyword">lower</span>(<span class="hljs-string">"temp_name_5"</span>.<span class="hljs-string">"lastname"</span>),
+                    (regexp_split_to_array(<span class="hljs-string">"firstname"</span>,E<span class="hljs-string">'[. ]'</span>))[<span class="hljs-number">1</span>] <span class="hljs-keyword">as</span> <span class="hljs-string">"firstname"</span>,
+                    (regexp_split_to_array(<span class="hljs-string">"firstname"</span>,E<span class="hljs-string">'[. ]'</span>))[<span class="hljs-number">2</span>] <span class="hljs-keyword">as</span> <span class="hljs-string">"middlename"</span>
+                    <span class="hljs-keyword">from</span> temp_name
+
+<span class="hljs-keyword">Create</span> <span class="hljs-keyword">table</span> “summer_winter_cleaned) <span class="hljs-keyword">as</span> (<span class="hljs-keyword">select</span> T.id <span class="hljs-keyword">as</span> <span class="hljs-string">"id"</span>,<span class="hljs-keyword">lower</span>(lastname) <span class="hljs-keyword">as</span> “lastname” ,<span class="hljs-keyword">lower</span>(firstname) <span class="hljs-keyword">as</span> “firstname”,<span class="hljs-keyword">lower</span>(middlename) <span class="hljs-keyword">as</span> “middlename”,<span class="hljs-keyword">year</span>,city,sport,<span class="hljs-keyword">lower</span>(S.athlete) <span class="hljs-keyword">as</span> <span class="hljs-string">"fullname"</span>,country, gender,<span class="hljs-keyword">event</span>,medal,season <span class="hljs-keyword">from</span> temp_name_6 T, summer_winter_temp_table S <span class="hljs-keyword">where</span> T.id = S.id);
+</code></pre>
+<p>Furthermore, we added a column “sex” which changes Men to M  and Femal to F in order to match the format of the athlete_events table. 
+ create table summer_winter_updated as select id,lastname,firstname,middlename,fullname,country,gender,substring(gender,1,1) as &quot;sex&quot;, year,season,city,sport,discipline,event,medal from summer_winter_cleaned;</p>
+<h3 id="athlete_events-cleaning">Athlete_events cleaning</h3>
+<ul>
+<li>Cleaned “medal” column according to piazza post. We performed the following code to get rid of duplicate medals obtained during the same game. This is done because there are some athletes who obtained multiple medals during the same game, and this might be that some races have been reran, and therefore there are multiple records to once race. First, we created a view called medal_duplicates which stores all the athlete,event,games information that have reruns and use array aggregate function to concatenate the two instances of the medal into  a single string. Then subtract this medal_duplicate from the original table to get a temp table that don’t have any duplicates. Finally union the medal_duplicate and the non_duplicate table to attain a cleaned table. The following code cleans, and gets rid of such records in medals.
+```sql
+create materialized view medal_duplicate as (select distinct A1.id, A1.event, A1.games, array_to_string(array_agg(distinct A1.medal),&#39;-&#39;)<pre><code>       from athlete <span class="hljs-built_in">A1</span>, athlete <span class="hljs-built_in">A2</span>
+       where <span class="hljs-built_in">A1</span>.id = <span class="hljs-built_in">A2</span>.id <span class="hljs-keyword">and </span><span class="hljs-built_in">A1</span>.event = <span class="hljs-built_in">A2</span>.event
+       <span class="hljs-keyword">and </span><span class="hljs-built_in">A1</span>.games = <span class="hljs-built_in">A2</span>.games <span class="hljs-keyword">and </span><span class="hljs-built_in">A1</span>.medal &lt;&gt;<span class="hljs-built_in">A2</span>.medal
+       group <span class="hljs-keyword">by </span><span class="hljs-built_in">A1</span>.id, <span class="hljs-built_in">A1</span>.event, <span class="hljs-built_in">A1</span>.games
+       <span class="hljs-keyword">order </span><span class="hljs-keyword">by </span><span class="hljs-built_in">A1</span>.id)
+</code></pre></li>
+<li>
+    <p>Create view remained as (select id,event,games from athlete_events except select id,event,games from medal_duplicates);</p>
+</li>
+<li>
+    <p>Create table athlete_event_games_table as (select <em> from athlete_events where id in (select id from remained) union all (select </em> from medal_duplicates));</p>
+
+</li>
+<li>
+    <p>Cleaned team names using the same above method to get rid of duplicate teams during the same game. Same issue as above, there were reruns in some Olympics games. 
+</p>
+</li>
+</ul>
+
+<pre><code>
+```sql
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">materialized</span> <span class="hljs-keyword">view</span> <span class="hljs-string">"team_duplicates"</span> <span class="hljs-keyword">as</span> (<span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> A1.id, A1.event, A1.games, array_to_string(array_agg(<span class="hljs-keyword">distinct</span> A1.team) ,<span class="hljs-string">'-'</span>) <span class="hljs-keyword">as</span> team
+          <span class="hljs-keyword">from</span> athlete A1, athlete A2
+          <span class="hljs-keyword">where</span> A1.id = A2.id <span class="hljs-keyword">and</span> A1.event = A2.event
+          <span class="hljs-keyword">and</span> A1.games = A2.games <span class="hljs-keyword">and</span> A1.team &lt;&gt; A2.team
+          <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> A1.id, A1.event, A1.games
+          <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> A1.id);
+
+<span class="hljs-keyword">Create</span> <span class="hljs-keyword">view</span> remained_team <span class="hljs-keyword">as</span> (<span class="hljs-keyword">select</span> <span class="hljs-keyword">id</span>,<span class="hljs-keyword">event</span>,games <span class="hljs-keyword">from</span> athlete <span class="hljs-keyword">except</span> <span class="hljs-keyword">select</span> <span class="hljs-keyword">id</span>,<span class="hljs-keyword">event</span>,games <span class="hljs-keyword">from</span> team_duplicates);
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> athlete_event_games_team <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> A.id,A.games,A.event,A.team <span class="hljs-keyword">from</span> athlete A <span class="hljs-keyword">inner</span> <span class="hljs-keyword">join</span> remained_team B <span class="hljs-keyword">on</span> A.id = B.id <span class="hljs-keyword">and</span> A.event = B.event <span class="hljs-keyword">and</span> A.games = B.games
+<span class="hljs-keyword">union</span> all (<span class="hljs-keyword">select</span> <span class="hljs-keyword">id</span>,games,<span class="hljs-keyword">event</span>,team <span class="hljs-keyword">from</span> team_duplicates);
+
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">id</span>,games,<span class="hljs-keyword">event</span> <span class="hljs-keyword">from</span> athlete_event_games_team <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">id</span>,games,<span class="hljs-keyword">event</span> <span class="hljs-keyword">having</span> <span class="hljs-keyword">count</span>(<span class="hljs-keyword">distinct</span> team)&gt;<span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> A.athlete_id,A.games,A.event_name,B.team,A.medal <span class="hljs-keyword">from</span> athlete_event_games_table A,athlete_event_games_team B <span class="hljs-keyword">where</span> A.athlete_id = B.id <span class="hljs-keyword">and</span> A.games = B.games <span class="hljs-keyword">and</span> A.games = B.games <span class="hljs-keyword">and</span> A.event_name = B.event;
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> athlete_event_games_table
+<span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> A.athlete_id,A.games,A.event_name,B.team,A.medal <span class="hljs-keyword">from</span> athlete_event_games_table A,athlete_event_games_team B <span class="hljs-keyword">where</span> A.athlete_id = B.id <span class="hljs-keyword">and</span> A.games = B.games <span class="hljs-keyword">and</span> A.games = B.games <span class="hljs-keyword">and</span> A.event_name = B.event;
+
+<span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> athlete_event_games_temp
+<span class="hljs-keyword">rename</span> <span class="hljs-keyword">to</span> <span class="hljs-string">"athlete_event_games"</span>;
+</code></pre><ul>
+<li><p>event_name is actually a composite value of the sport,event_gender (Men,Women, or Mixed) and the remaining event detail. So we broke down the column into three columns using regexp_split_to_array and substring. Also, we noticed that the format of the event_detail is different from the <code>event</code> column of the summer_winter table, so we cleaned the event_detail to match the format using nested regexp_replace.  </p>
+
+<pre><code> 
+    Create table event as select &quot;event&quot; as “event_name”,sport,          
+    substring(<span class="hljs-keyword">event</span>,E<span class="hljs-string">'(Men|Women|Mixed)'</span>) <span class="hljs-keyword">as</span> <span class="hljs-string">"event_gender"</span>,
+              (regexp_split_to_array(<span class="hljs-keyword">event</span>,E<span class="hljs-string">'( Men\'s | Women\'s | Mixed )'</span>))[<span class="hljs-number">2</span>] <span class="hljs-keyword">as</span> event_detail
+       <span class="hljs-keyword">from</span> athlete_events;
+</code></pre></li>
+</ul>
+<p>create table event_temp as select distinct even_name,sport
+                    regexp_replace(regexp_replace(regexp_replace(event_detail,&#39;,000&#39;,&#39;000&#39;),&#39; kilometres&#39;,&#39;KM&#39;),&#39; metres&#39;,&#39;M&#39;) as event_detail,event_gender from event;</p>
+<p>Drop table event;
+Alter table event_temp
+Rename to “event”;</p>
+<p>Iv. We created a medal_values table in order to solve query 8. We select all the distinct medal in athlete_events table (after cleaning the reruns) and give each a value. 
+Cleaning noc_regions and dictionary. </p>
+<p>create table medal_values(
+                 medal_type varchar(30),
+                 value float             )</p>
+<p>insert into medal_values
+             values(&#39;Gold&#39;,3),(&#39;Silver&#39;,2),(&#39;Bronze&#39;,1),(‘NA’,0),(&#39;Gold-NA&#39;,1.5),(&#39;Gold-Silver&#39;,2.5),(&#39;Bronze-NA-Silver&#39;,1.5),(&#39;Bronze-NA&#39;,0.5),(&#39;Bronze-Gold&#39;,2),(&#39;NA-Silver&#39;,1),(&#39;Bronze-Silver&#39;,1.5)</p>
+<pre><code>
+- I. We performed a full outer join of the two datasets on noc code. Then manually cleaned the table after googling, in order to ensure each noc code can functionally determine countryname. 
+
+```sql
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> noc_temp <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> A.code,A.countryname,A.population,A.gdp,B.notes <span class="hljs-keyword">from</span> dictionary A <span class="hljs-keyword">full</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">join</span> noc_regions B <span class="hljs-keyword">on</span> A.code = B.noc;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> noc_temp <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> A.code,A.countryname,A.population,A.gdp,B.notes <span class="hljs-keyword">from</span> dictionary A <span class="hljs-keyword">full</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">join</span> noc_regions B <span class="hljs-keyword">on</span> A.code = B.noc;
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> distinct_noc <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> noc_dictionary.code,countryname,population,gdp,notes <span class="hljs-keyword">from</span> noc_dictionary, duplicate_noc <span class="hljs-keyword">where</span> noc_dictionary.code = duplicate_noc.code <span class="hljs-keyword">and</span> countryname <span class="hljs-keyword">not</span> <span class="hljs-keyword">like</span> <span class="hljs-string">'%*%'</span> <span class="hljs-keyword">and</span> countryname != <span class="hljs-string">'UK'</span> <span class="hljs-keyword">and</span> countryname != <span class="hljs-string">'USA'</span> <span class="hljs-keyword">and</span> countryname != <span class="hljs-string">'Burma'</span>
+             <span class="hljs-keyword">and</span> countryname!=<span class="hljs-string">'Korea, South'</span> <span class="hljs-keyword">and</span> countryname!=<span class="hljs-string">'Congo, Dem Rep'</span> <span class="hljs-keyword">and</span> countryname != <span class="hljs-string">'Antigua'</span> <span class="hljs-keyword">and</span> countryname != <span class="hljs-string">'Boliva'</span> <span class="hljs-keyword">and</span> countryname != <span class="hljs-string">'Cote d''Ivoire'</span> <span class="hljs-keyword">and</span> countryname != <span class="hljs-string">'Virgin Islands, British'</span>
+             <span class="hljs-keyword">and</span> countryname != <span class="hljs-string">'Korea, North'</span> <span class="hljs-keyword">and</span> countryname!= <span class="hljs-string">'Saint Vincent and the Grenadines'</span> <span class="hljs-keyword">and</span> countryname!= <span class="hljs-string">'Palestine, Occupied Territories'</span> <span class="hljs-keyword">and</span> countryname!= <span class="hljs-string">'Saint Kitts and Nevis'</span> <span class="hljs-keyword">and</span> countryname != <span class="hljs-string">'Congo'</span> <span class="hljs-keyword">and</span>                                                          countryname != <span class="hljs-string">'East Timor (Timor-Leste)'</span>;
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> noc_dictionary <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> noc_temp <span class="hljs-keyword">where</span> code <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> (<span class="hljs-keyword">select</span> code <span class="hljs-keyword">from</span> distinct_noc) <span class="hljs-keyword">union</span> all <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> distinct_noc. 
+Noc code functionally determines the countryname,gdp,<span class="hljs-keyword">and</span> population
+</code></pre><h2 id="discussion-of-information-loss">Discussion of Information Loss</h2>
+<ul>
+<li>athlete_events and summer_winter table are not merged together:</li>
+<li>After trying out functional dependencies we found in summer_winter table with their relationship with athelete_events, we found that it makes most sense to draw connection between the two on the primary Name column</li>
+<li>However, while Athlete in summer_winter table has a clear notation to identify athletes’ first, middle and last names, Name in athlete_events does not.</li>
+<li>After trying out multiple ways to classify athletes’ first names, middle names and last names in the athlete_info table, none of the methods we try match names in athlete_info table with those in summer_winter well.</li>
+</ul>
+<p><strong><em>Our team decides to leave out names from summer_winter table for the following reasons:</em></strong></p>
+<ul>
+<li>There are notably more unique athletes in athlete_events than those in summer_winter</li>
+<li>While there is no way we can think of to accurately compare names in the two tables, this raises a range of problems if we simply union the two tables:</li>
+<li>We are not able to compare if two names from the two tables are the same person -- there is no exact way to identify the delimiters in the names to format the names the same in the two columns. And therefore comparison is always off. Also, where there is no ids assigned to athletes in summer_winter table, and if it doesn’t make sense to randomly assign them for we have no idea if there are athletes with different names.</li>
+<li>Although there will definitely be information loss generated by not including information from summer_winter table, our team believes that it more reasonable to accept this information loss compared to operating/querying on a big relation of which we cannot properly reason what the table actually has 
+(i.e. We believe the quality of the data is more important that quantity of the data for our queries’ purposes here)</li>
+</ul>
+<h1 id="fds-and-3nf">FDs and 3NF</h1>
+<h2 id="determine-the-fds-using-sql-group-by-a-having-count-distinct-b-1-method">Determine the FDs using sql “group by A having count(distinct B)&gt;1” method</h2>
+<p>(P.S. The following functional dependencies are based on the relations after data cleaning and processing)
+athlete_id → firstname, lastname, height, weight, sex
+games → year, season
+athlete_id, team → noc
+athlete_id, year, season → age, noc
+athlete_id, year, season, event → medal, team
+event_name → sport, event_gender, event_detail
+sport, year, season → city
+noc→ countryname, population, gdp ,notes</p>
+<ul>
+<li>We firstly break the relations down according to these functional dependencies, and going from here, combined with knowledge we have in regards the attributes, we come up with the following schema:
+athlete_info: id, firstname, lastname, height, weight, sex. </li>
+<li><p>Every attribute is atomic. Id uniquely identifies all other attributes. The table is in 2NF because there is only one key so no partial key, and there is no transitive functional dependencies in this table as all the attributes depend on and only on the primary key and therefore it is in 3NF. </p>
+</li>
+<li><p>athlete_games_info: id, year, season, age, noc
+Combination of athlete_id, season and year uniquely identifies each entry in this relation. All data are in atomic form. It is in 2NF, and there does not exist further transitive functional dependencies, therefore it is in 3NF.</p>
+</li>
+<li>athlete_event_games: athlete_id, year, season, event_name, medal, team
+The primary key is a combination of athlete_id, event_name, season and year. Each attribute is atomic therefore it is in 1NF. Medal and team are each determined only by the primary key together instead of being determined by any partial key, therefore it is in 2NF. There are no other transitive functional dependencies in the relation. Therefore it is in 3NF</li>
+<li>event: event_name, sport, event_gender, event_detail
+An event is uniquely identified by event_name. (As specified by teaching assistant on Piazza), we are advised to treat event as atomic. Therefore it is already in 1NF. Furthermore, there do not exist additional partial keys, and therefore this relation is in 2NF. No transitive functional dependencies exist. Therefore it is in 3NF.</li>
+<li>noc_dictionary: noc, countryname, population, gdp, notes. NOC code determines the countryname, population, gdp and notes. There is no partial key. Therefore it is in 3NF.</li>
+<li>games_event: year, event, city
+Combinations of year, event uniquely identifies each entry in this table, and no transitive functional dependencies exist. Year and event determine the city in which the Olympic is held because there was a time where some events were held in Australia and some events were held in Sweden. City can only be determined by games_id and event together, and cannot be determined one without the other. Therefore jointly, it is in 3NF.</li>
+<li>medal_value: medal_type, value
+medal_type is the primary key here, and each corresponds to a value of {‘NA’:0, ‘Bronze’: 1, ‘Silver’: 2, ‘Gold’: 3}. No other transitive functional dependencies exist, values are not in atomic forms but are considered as atomic for this project’s sake, and therefore this relation is in 3NF.</li>
+</ul>
+<p>#Queries and Results</p>
+<p>Our team believes that it is more acceptable to admit the information loss from not including possible results from summer_winter table than to union the two tables (reasons provided above in Data Processing procedure)
+The following queries and query results is based on relation without unionizing athletes from summer_winter table, and therefore our output rows might contain less than the ideal outputs</p>
+<h3 id="for-the-year-1992-in-barcelona-display-the-country-name-and-the-total-number-of-competitors-from-that-country-including-those-countries-that-have-no-competitors-in-descending-order-of-the-number-of-competitors-remember-not-all-countries-participate-in-every-olympics-game-">For the year 1992 in Barcelona display the country name and the total number of competitors from that country, including those countries that have no competitors, in descending order of the number of competitors. Remember not all countries participate in every Olympics game.</h3>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> temp_query_1 <span class="hljs-keyword">as</span> 
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> A.athlete_id,A.season,A.year
+<span class="hljs-keyword">from</span> games_event_info G,athlete_event_gamesA
+<span class="hljs-keyword">where</span> A.year = <span class="hljs-number">1992</span> <span class="hljs-keyword">and</span> G.city = <span class="hljs-string">'Barcelona'</span> <span class="hljs-keyword">and</span> A.year = G.year <span class="hljs-keyword">and</span> A.event_name = G.event;
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> temp_query_12 <span class="hljs-keyword">as</span> 
+<span class="hljs-keyword">select</span> A.athlete_id,countryname,noc
+<span class="hljs-keyword">from</span> temp_query_1 T,athlete_games_info A,noc_dictionary N
+<span class="hljs-keyword">where</span> T.athlete_id = A.athlete_id <span class="hljs-keyword">and</span> T.year = A.year <span class="hljs-keyword">and</span> T.season = A.season <span class="hljs-keyword">and</span> noc = code;
+
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> N.countryname,<span class="hljs-keyword">count</span>(<span class="hljs-keyword">distinct</span>(athlete_id)) 
+<span class="hljs-keyword">from</span> temp_query_12 T
+<span class="hljs-keyword">full</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">join</span> noc_dictionary N <span class="hljs-keyword">on</span> T.countryname = N.countryname
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> N.countryname
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">count</span>(<span class="hljs-keyword">distinct</span>(athlete_id)) <span class="hljs-keyword">desc</span>;
+</code></pre>
+<h3 id="for-the-vancouver-2010-games-list-the-competitor-countries-in-the-curling-competition-">For the Vancouver (2010) games, list the competitor countries in the Curling competition.</h3>
+<pre><code class="lang-sql">select distinct countryname
+from games_event_info GE,athlete_event_games AEG,event E,athlete_info A,athlete_games_info AG,noc_dictionary
+where AEG.<span class="hljs-attr">year</span> = '<span class="hljs-number">2010</span>' <span class="hljs-literal">and</span> GE.<span class="hljs-attr">city</span> = 'Vancouver' <span class="hljs-literal">and</span> E.<span class="hljs-attr">sport</span> = 'Curling' <span class="hljs-literal">and</span> AEG.<span class="hljs-attr">event_name</span> = E.event_name <span class="hljs-literal">and</span> A.<span class="hljs-attr">id</span> = AEG.athlete_id <span class="hljs-literal">and</span> <span class="hljs-attr">noc</span> = code <span class="hljs-literal">and</span> A.<span class="hljs-attr">id</span> = AG.athlete_id <span class="hljs-literal">and</span> AG.<span class="hljs-attr">season</span> = AEG.season <span class="hljs-literal">and</span> AEG.<span class="hljs-attr">year</span> = AG.year <span class="hljs-literal">and</span> GE.<span class="hljs-attr">year</span> = AEG.year;
+</code></pre>
+<h3 id="list-all-the-competitors-who-have-competed-in-more-than-4-events-in-any-olympics-since-1900-">List all the competitors who have competed in more than 4 events in any Olympics since 1900.</h3>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> athlete_id,fullname
+<span class="hljs-keyword">from</span> athlete_event_games AEG,athlete_info A
+<span class="hljs-keyword">where</span> <span class="hljs-keyword">year</span> &gt;=<span class="hljs-number">1900</span> <span class="hljs-keyword">and</span> athlete_id = A.id
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <span class="hljs-string">"athlete_id"</span>,<span class="hljs-string">"fullname"</span>,<span class="hljs-keyword">year</span>,season <span class="hljs-keyword">having</span> <span class="hljs-keyword">count</span>(athlete_id)&gt;<span class="hljs-number">4</span> ;
+</code></pre>
+<h3 id="find-the-number-of-competitors-in-each-olympic-game-who-have-competed-in-at-least-3-events-and-group-them-by-year-after-1940-">Find the number of competitors in each Olympic game who have competed in at least 3 events and group them by year, after 1940.</h3>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> G.year,<span class="hljs-keyword">count</span>(<span class="hljs-keyword">distinct</span> athlete_id) 
+<span class="hljs-keyword">from</span>
+   (<span class="hljs-keyword">select</span> athlete_id,<span class="hljs-keyword">year</span>,season <span class="hljs-keyword">from</span> athlete_event_games A
+ <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> athlete_id,<span class="hljs-keyword">year</span>,season
+ <span class="hljs-keyword">having</span> <span class="hljs-keyword">count</span>(<span class="hljs-keyword">distinct</span> event_name) &gt; <span class="hljs-number">2</span>) <span class="hljs-keyword">as</span> foo,
+<span class="hljs-string">"games_table"</span> G 
+<span class="hljs-keyword">where</span> foo.year =G.year <span class="hljs-keyword">and</span> foo.season = G.season <span class="hljs-keyword">and</span> G.year &gt; <span class="hljs-number">1940</span>
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> G.year;
+
+Row number = 24
+</code></pre>
+<h3 id="count-the-number-of-competitors-who-were-from-india-in-every-olympics-held-since-1947-">Count the number of competitors who were from India in every Olympics held since 1947.</h3>
+<pre><code class="lang-sql">select <span class="hljs-built_in">count</span>(distinct(AGI.athlete_id)) 
+<span class="hljs-keyword">from</span> noc_dictionary N,athlete_event_games AEG,athlete_info A ,athlete_games_info AGI
+<span class="hljs-keyword">where</span> countryname = 'India' <span class="hljs-keyword">and</span> A.<span class="hljs-built_in">id</span> = AEG.athlete_id <span class="hljs-keyword">and</span> AGI.athlete_id = A.<span class="hljs-built_in">id</span> <span class="hljs-keyword">and</span> AGI.noc = N.code <span class="hljs-keyword">and</span> AGI.<span class="hljs-built_in">year</span> = AEG.<span class="hljs-built_in">year</span> <span class="hljs-keyword">and</span> AGI.season = AGI.season <span class="hljs-keyword">and</span> AEG.<span class="hljs-built_in">year</span> &gt;= <span class="hljs-number">1947</span>;
+</code></pre>
+<h3 id="display-the-results-of-swimming-events-both-men-and-women-in-the-2004-olympics">Display the results of swimming events (both men and women) in the 2004 Olympics</h3>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> A.fullname,E.event_name,medal 
+<span class="hljs-keyword">from</span> <span class="hljs-keyword">event</span> E,athlete_event_games AEG, athlete_info A
+<span class="hljs-keyword">where</span> sport = <span class="hljs-string">'Swimming'</span>  <span class="hljs-keyword">and</span> AEG.year = <span class="hljs-string">'2004'</span> <span class="hljs-keyword">and</span> E.event_name = AEG.event_name <span class="hljs-keyword">and</span> A.id = AEG.athlete_id;
+</code></pre>
+<h3 id="find-the-medal-counts-for-michael-phelps-across-multiple-years-show-it-by-year-and-medal-type">Find the medal counts for Michael Phelps across multiple years, show it by year and medal type</h3>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">year</span>, medal, <span class="hljs-keyword">count</span>(*) 
+<span class="hljs-keyword">from</span> athlete_info A,athlete_event_games AEG 
+<span class="hljs-keyword">where</span> A.fullname <span class="hljs-keyword">like</span> <span class="hljs-string">'%michael%phelps%'</span> <span class="hljs-keyword">and</span> A.id = AEG.athlete_id
+<span class="hljs-keyword">and</span> medal != <span class="hljs-string">'NA'</span>
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">year</span>,medal;
+</code></pre>
+<h3 id="which-country-has-won-the-most-gold-medals-in-the-men-s-marathon-">Which country has won the most Gold medals in the men’s marathon?</h3>
+<pre><code class="lang-sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">view</span> temp_query_81 <span class="hljs-keyword">cascade</span>;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> temp_query_81 <span class="hljs-keyword">as</span> 
+<span class="hljs-keyword">select</span> noc <span class="hljs-keyword">from</span> <span class="hljs-keyword">event</span> E,athlete_event_games AEG,athlete_games_info A
+<span class="hljs-keyword">where</span> event_gender = <span class="hljs-string">'Men'</span> <span class="hljs-keyword">and</span> event_detail = <span class="hljs-string">'Marathon'</span>
+<span class="hljs-keyword">and</span> AEG.athlete_id = A.athlete_id <span class="hljs-keyword">and</span> AEG.year = A.year <span class="hljs-keyword">and</span> AEG.season = A.season <span class="hljs-keyword">and</span> AEG.event_name =E.event_name <span class="hljs-keyword">and</span> medal = <span class="hljs-string">'Gold'</span>;
+<span class="hljs-keyword">select</span> countryname <span class="hljs-keyword">from</span> temp_query_81,noc_dictionary <span class="hljs-keyword">where</span> noc = code
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> noc,countryname
+<span class="hljs-keyword">having</span> <span class="hljs-keyword">count</span>(*) = (<span class="hljs-keyword">select</span> <span class="hljs-keyword">max</span>(C) <span class="hljs-keyword">from</span> (<span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">as</span> C <span class="hljs-keyword">from</span> temp_query_81 <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> noc) <span class="hljs-keyword">as</span> A);
+</code></pre>
+<h3 id="find-the-names-of-competitors-who-have-improved-or-maintained-their-standing-across-three-games-use-years-after-1940-">Find the names of competitors who have improved or maintained their standing across three games. Use years after 1940.</h3>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">materialized</span> <span class="hljs-keyword">view</span> temp_query_9 <span class="hljs-keyword">as</span>
+<span class="hljs-keyword">select</span> athlete_id,event_name,<span class="hljs-keyword">year</span>,medal_type,<span class="hljs-keyword">value</span>
+<span class="hljs-keyword">from</span> athlete_event_games,medal_values
+<span class="hljs-keyword">where</span> medal!=<span class="hljs-string">'NA'</span> <span class="hljs-keyword">and</span> medal = medal_type;
+
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> A.athlete_id,AI.fullname 
+<span class="hljs-keyword">from</span> temp_query_9 A,temp_query_9 B,temp_query_9 C, athlete_info AI 
+<span class="hljs-keyword">where</span> A.athlete_id = B.athlete_id <span class="hljs-keyword">and</span> B.athlete_id = C.athlete_id
+<span class="hljs-keyword">and</span> A.event_name = B.event_name <span class="hljs-keyword">and</span> B.event_name = C.event_name
+<span class="hljs-keyword">and</span> A.year &gt; B.year <span class="hljs-keyword">and</span> B.year &gt; C.year <span class="hljs-keyword">and</span> A.year &gt; C.year <span class="hljs-keyword">and</span> A.value &gt;= B.value <span class="hljs-keyword">and</span> B.value &gt;= C.value <span class="hljs-keyword">and</span> C.year &gt;= <span class="hljs-number">1940</span>
+<span class="hljs-keyword">and</span> A.athlete_id = AI.id;
+</code></pre>
+</main>
+    </body>
+    </html>

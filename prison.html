@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Why does U.S. Increase so Rapidly</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+  <script src="//code.highcharts.com/maps/modules/map.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+  <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+  <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+  <link rel="stylesheet" href="./us-prison/style.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+  <script src="./us-prison/js/main.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet">
+</head>
+ <body>
+   
+  <header>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark blue scrolling-navbar">
+      <a class="navbar-brand" href="#"><strong>CW</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Homepage <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./projects.html">Projects</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Opinions</a>
+          </li> -->
+        </ul>
+        <!-- <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul> -->
+      </div>
+    </nav>
+  
+  </header>
+  <div data-spy="affix" id="dot-nav">
+    <ul>
+      <li class="awesome-tooltip active" title="Home"><a href="#home"></a></li>
+      <li class="awesome-tooltip" title="trendChart"><a href="#project_0"></a></li>
+      <li class="awesome-tooltip" title="areaChart"><a href="#project_1"></a></li>
+      <li class="awesome-tooltip" title="mapChart"><a href="#project_2"></a></li>
+      <li class="awesome-tooltip" title="stackChart"><a href="#project_3"></a></li>
+      <li class="awesome-tooltip" title="reference"><a href="#reference"></a></li>
+    </ul>
+  </div>
+    
+  <div id="main" class="container">
+    <section id="home">
+          <article>
+              <div class="row" id="heading">
+                  <div class="col-md-12">
+                    <br>
+                    <h1>Why Does the U.S. Incareration Rate Increase so <strong class = 'highlight'>Rapidly</strong>?
+                    </h1>
+                    <h2><small><i>Halıcıoğlu Data Science Institute</i> , Shuibenyang Yuan & Caiwei Wang </small></h2>
+                    <br>
+                    <div id="introContainer">
+                      <p>
+                        The number of prisoners has increased rapidly over past five decades<br>
+                        <br>
+                        But also, the rate of prisoners has increased. <br>
+                        <br>
+                        Right now, the U.S. holds only <u>5%</u> of the world’s population but <u>25%</u> of the world’s prisoners.<br>
+                        <br>
+                        Was it the war on drugs? Or was it Mandatory minimums ?<br>
+                        <br>
+                        How we got here ?<br>
+                      </p>
+                    </div>
+                  </div>
+              </div>
+          </article>           
+    </section>
+    <section id="project_0">
+      <article>
+          <div class="row">
+              <div class="col-md-12">
+              <h1>How did we get here?</h1>
+                  <div id="trendChart" class="chart">
+                  </div>
+              </div>
+          </div>
+      </article>           
+  </section>
+  <br>
+                    <br>
+                    <br>
+                    <br>
+      <section id="project_1">
+          <article>
+              <div class="row">
+                  <div class="col-md-12">
+                    
+                  <h1>Do prisons admit more than they release?</h1>
+                    <div id="areaChart" class="chart">
+                    </div>
+                  </div>
+              </div>
+          </article>           
+      </section>
+      <br>
+      <br>
+      <br>
+
+      <section id="project_2">
+          <article>
+            
+              <div class="row">
+                  <div class="col-md-12">
+                    
+                  <h1>Why are they in prison?</h1>
+                  <div id="mapChart" class="chart_map"></div>
+              </div>
+          </article>           
+      </section>
+      <section id="project_3">
+          <article>
+              <div class="row">
+                  <div class="col-md-12">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                  <h1>Do some states have higher rates?</h1>
+                  <div id="barChart" class="chart"></div>
+                  </div>
+              </div>
+          </article>           
+      </section> 
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <section id="reference">
+        <article>
+            <div class="row">
+                <div class="col-md-12">
+                <h1>Reference & Methodology</h1>
+                <p class = 'bg-light text-dark'>
+                  <strong>Sources:</strong><br>
+                    <p>
+                      <cite>
+                        <a href="https://www.bjs.gov/index.cfm?ty=nps">Corrections Statistical Analysis Tool (CSAT) - Prisoners </a>
+                      </cite>
+                      by Bureau of Justice Statistics
+                    </p>
+                    <p>
+                      <cite>
+                        <a href="https://www.bjs.gov/fjsrc/var.cfm?t=new">Federal Criminal Case Processing Statistics </a>
+                      </cite>
+                      by Bureau of Justice Statistics
+                    </p>
+                    <p>
+                      <cite>
+                        <a href="https://www.icpsr.umich.edu/icpsrweb/NACJD/studies/36404">National Corrections Reporting Program, 1991-2014: Selected Variables (ICPSR 36404) </a>
+                      </cite>
+                      by United States Department of Justice. Office of Justice Programs. Bureau of Justice Statistics. National Corrections Reporting Program
+                    </p>
+                    <p>
+                      <cite>
+                        <a href="https://commons.wikimedia.org/wiki/File:US_incarceration_timeline-clean.svg">US incarceration timeline-clean.svg </a>
+                      </cite>
+                      by Wikimedia Commons
+                    </p>
+                    <p>
+                      <cite>
+                        <a href="https://www.kaggle.com/christophercorrea/prisoners-and-crime-in-united-states#ucr_by_state.csv">Crime and Incarceration in the United States </a>
+                      </cite>
+                      by ChrisC on Kaggle
+                    </p>
+                    <p><cite><a href="https://www.clipartkey.com/view/bTbiTR_jail-clipart-svg-clip-art-png-prison-bars/">Front Page Image</a></cite>
+                    by clipartkey</p>
+                </p> <br>
+                <p class = 'bg-light text-dark'>
+                  <strong>Methodology: </strong>
+                  <br>
+                    <p>
+                      Layout: we used <a href="https://getbootstrap.com/">Bootstrap</a>for our page layout, including page formatt, animation, and navigation.
+                    </p>
+                    <p>
+                      Chart: we used <a href="https://www.highcharts.com/">Highcharts</a> for all the data visualization.
+                    </p>
+                </p>
+                </div>
+            </div>
+        </article>           
+    </section> 
+  </div>
+</body>
+</html>
