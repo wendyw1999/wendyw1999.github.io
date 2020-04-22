@@ -7,13 +7,12 @@ grey 	rgb(120, 120, 120)*/
 html {
     font-size: 18px;
 }
-p {
+/* p {
     margin:4px auto;
-}
+} */
 body {
     color: #494e52;
     font-family: -apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
-    font-size:.6em;
 }
 
 a {
