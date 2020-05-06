@@ -13,7 +13,7 @@ function plotTrend(){
                     if (chart.title.textStr == 'Number of Prisoners in the U.S., 1925-2015') {
                         chart.update ({
                             data : {
-                            csvURL: window.location.origin + '/data/trend_rate.csv'
+                            csvURL: window.location.origin + './data/trend_rate.csv'
                             },
                             title: {
                                 text: 'Proportion of U.S. Prisoners, 1925-2015',
@@ -34,7 +34,7 @@ function plotTrend(){
                     } else {
                         chart.update ({
                             data : {
-                            csvURL: window.location.origin + '/data/trend_count.csv'
+                            csvURL: window.location.origin + './data/trend_count.csv'
                             },
                             title: {
                                 text: 'Number of Prisoners in the U.S., 1925-2015',
@@ -58,7 +58,7 @@ function plotTrend(){
         backgroundColor: 'transparent',
         data: {
             // enablePolling: true,
-            csvURL: window.location.origin + '/data/trend_count.csv'
+            csvURL: window.location.origin + './data/trend_count.csv'
         },
         legend: {
             enabled: false
@@ -130,7 +130,7 @@ function plotTrend(){
     });
 }
 function plotArea() {
-    Highcharts.getJSON('/data/offenses.json', function(json) {
+    Highcharts.getJSON('./data/offenses.json', function(json) {
         let types = Object.keys(json)
         
         series = []
@@ -228,7 +228,7 @@ function plotArea() {
     Highcharts.setOptions(Highcharts.theme);
 }
 function plotMap() {
-Highcharts.getJSON('/data/state_distribution.json', function (data) {
+Highcharts.getJSON('./data/state_distribution.json', function (data) {
 
   data.forEach(function (p) {
     
@@ -301,7 +301,7 @@ Highcharts.mapChart('barChart', {
 
 }
 function plotBar() {
-    Highcharts.getJSON('/data/releases_admissions.json', function(json) {
+    Highcharts.getJSON('./data/releases_admissions.json', function(json) {
         let years = Object.keys(json)
         admission_datum = [];
         releases_datum = [];
